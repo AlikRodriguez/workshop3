@@ -1,0 +1,116 @@
+.todo-list {
+  padding: 8px;
+  margin: 16px 0;
+  list-style-type: none;
+}
+
+.todo-root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-delete {
+  margin: 8px 24px 0 8px;
+  color: #73737d;
+  opacity: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.todo-root:hover .todo-delete {
+  opacity: 1;
+}
+
+.todo-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 48px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.todo-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.todo-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #deded4;
+}
+
+.todo-container:hover {
+  color: black;
+}
+
+.todo-container input:checked ~ .todo-text {
+  text-decoration: line-through;
+  color: #84848f;
+}
+
+.todo-root:hover input:checked ~ .todo-text {
+  color: #47474b;
+  text-decoration: none;
+}
+
+.todo-container input:checked ~ .todo-checkmark {
+  background-color: #ff7c70;
+}
+
+.todo-container:hover input ~ .todo-checkmark {
+  background-color: #c7c7ca;
+}
+
+.todo-container:hover input:checked ~ .todo-checkmark {
+  background-color: #ff2f1c;
+}
+
+.todo-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.todo-container input:checked ~ .todo-checkmark:after {
+  display: block;
+}
+
+.todo-container .todo-checkmark:after {
+  left: 9px;
+  top: 4px;
+  width: 4px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.add-todo {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 13px;
+  right: 40px;
+  background-color: #1d1d14;
+  color: #deded4;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: solid 1px #d3d3d3;
+  user-select: none;
+}
+
+.add-todo:hover {
+  background-color: #4d4d43;
+}
